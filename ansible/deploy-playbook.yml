@@ -1,0 +1,15 @@
+---
+- name: Update web servers
+  hosts: linux
+  remote_user: root
+
+  tasks:
+  - name: Ensure apache is at the latest version
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+
+  # remote_user: root
+  # roles:
+
+  #   - role: web-server
